@@ -22,8 +22,7 @@
 char* menu[] = {"614Con 2018",
                 "Readme     ",
                 "Bling       ",
-                "Viz      ",
-                "Slideshow "
+                "Viz      "
                 }; 
 
 char* bling[] = {"614Con 2018 ",
@@ -206,34 +205,34 @@ void tftBarGraphTest()
   
   delay(2000);
 }
-
-void tftBitmapTest()
-{
-  File dir=SD.open("/");
-  dir.rewindDirectory();
-  
-  while(dir) {
-     File entry =  dir.openNextFile();
-     if (! entry) {
-       // no more files
-       Serial.println("**nomorefiles**");
-       break;
-     }
-     // Print the 8.3 name
-     Serial.print(entry.name());
-     // Recurse for directories, otherwise print the file size
-     if (entry.isDirectory()) {
-       Serial.println("/");
-     } 
-   else{
-       // files have sizes, directories do not
-       Serial.print("\t\t");
-       Serial.println(entry.size(), DEC);
-     if(bmpDraw(entry.name(),0,0))delay(5000);
-     }
-     entry.close();
-   }
-}
+//
+//void tftBitmapTest()
+//{
+//  File dir=SD.open("/");
+//  dir.rewindDirectory();
+//  
+//  while(dir) {
+//     File entry =  dir.openNextFile();
+//     if (! entry) {
+//       // no more files
+//       Serial.println("**nomorefiles**");
+//       break;
+//     }
+//     // Print the 8.3 name
+//     Serial.print(entry.name());
+//     // Recurse for directories, otherwise print the file size
+//     if (entry.isDirectory()) {
+//       Serial.println("/");
+//     } 
+//   else{
+//       // files have sizes, directories do not
+//       Serial.print("\t\t");
+//       Serial.println(entry.size(), DEC);
+//     if(bmpDraw(entry.name(),0,0))delay(5000);
+//     }
+//     entry.close();
+//   }
+//}
 
 // This function opens a Windows Bitmap (BMP) file and
 // displays it at the given coordinates.  It's sped up
@@ -632,7 +631,6 @@ MenuFuncPtr menu_func[] = {0,
                 tftReadme,
                 tftBlingMode,
                 vizSetup,
-                tftBitmapTest
                 };
  
 void setup(void) {
@@ -1038,4 +1036,3 @@ void testroundrects() {
 //
 //  pongLoop();
 //}
-
