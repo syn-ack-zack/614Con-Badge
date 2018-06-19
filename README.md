@@ -12,7 +12,7 @@
 - NeoPixel 5050 RGB LED with Integrated Driver Chip
 - 9v battery
 
-# Part Sources:
+# Part Sources
 - https://www.aliexpress.com
 - https://www.amazon.com
 - https://www.adafruit.com
